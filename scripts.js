@@ -32,3 +32,5 @@ const pigLatinTrans = (word) => {
 
 console.log('consonant test:', pigLatinTrans(dog)) //returns 'ogday'
 console.log('vowel test:', pigLatinTrans(ember)) //returns 'emberway'
+console.log('error test for non-string:', pigLatinTrans(9)) //throws an error
+console.log('error test for multi-word string:', pigLatinTrans('Hello there')) //throws an error
