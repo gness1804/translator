@@ -17,7 +17,7 @@ const pigLatinTrans = (word) => {
   if (typeof word !== 'string') {
     throw new Error('You must enter a string.')
   }
-  const wordArr = word.split('')
+  const wordArr = word.toLowerCase().split('')
   if (wordArr.includes(' ')) {
     throw new Error('You must enter a single word.')
   }
@@ -32,5 +32,7 @@ const pigLatinTrans = (word) => {
 
 console.log('consonant test:', pigLatinTrans(dog)) //returns 'ogday'
 console.log('vowel test:', pigLatinTrans(ember)) //returns 'emberway'
+console.log('consonant capital test:', pigLatinTrans('Dog'))
+console.log('vowel capital test:', pigLatinTrans('Egg'))
 console.log('error test for non-string:', pigLatinTrans(9)) //throws an error
 console.log('error test for multi-word string:', pigLatinTrans('Hello there')) //throws an error
