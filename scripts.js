@@ -37,15 +37,8 @@ const pigLatinTrans = (text) => {
     translate(textArr[i])
   }
 
-  return masterArr
+  return masterArr.join(' ')
 
-  // if (isTheLetterAVowel(wordArr[0])) {
-  //   return `${wordArr.join('')}way`
-  // } else {
-  //   const secondArr = []
-  //   secondArr.push(wordArr[0])
-  //   return `${wordArr.slice(1).concat(secondArr).join('')}ay`
-  // }
 }
 
 console.log('consonant test:', pigLatinTrans(dog)) //returns 'ogday'
