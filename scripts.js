@@ -14,12 +14,21 @@ const isTheLetterAVowel = (letter) => {
 
 //this is the main function
 const pigLatinTrans = (word) => {
+  if (typeof word !== 'string') {
+    throw new Error('You must enter a string.')
+  }
   const wordArr = word.split('')
+  if (wordArr.includes(' ')) {
+    throw new Error('You must enter a single word.')
+  }
   if (isTheLetterAVowel(wordArr[0])) {
     return `${wordArr.join('')}way`
   } else {
-
+    const secondArr = []
+    secondArr.push(wordArr[0])
+    return `${wordArr.slice(1).concat(secondArr).join('')}ay`
   }
 }
 
-console.log(pigLatinTrans(arrow))
+console.log('consonant test:', pigLatinTrans(dog)) //returns 'ogday'
+console.log('vowel test:', pigLatinTrans(ember)) //returns 'emberway'
